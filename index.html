@@ -550,8 +550,8 @@
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-box">
     <button class="modal-close" id="modalClose">✕</button>
-    <video id="modalVideo" src="media/video.mp4" controls autoplay playsinline></video>
-    <audio id="modalAudio" src="media/audio.mp3"></audio>
+    <video id="modalVideo" src="./media/video.mp4" controls autoplay playsinline></video>
+<audio id="modalAudio" src="./media/audio.mp3"></audio>
   </div>
 </div>
 
@@ -660,8 +660,8 @@
     modalAudio.currentTime = 0;
     modalAudio.volume = 1;
     modalVideo.volume = 1;
-    modalVideo.play().catch(() => {});
-    modalAudio.play().catch(() => {});
+    modalVideo.play().catch(err => console.error("VIDEO ERROR:", err));
+modalAudio.play().catch(err => console.error("AUDIO ERROR:", err));
   });
 
   function closeModal(){
